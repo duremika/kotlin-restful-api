@@ -1,0 +1,16 @@
+@startuml
+
+actor "User" as user
+node "Kotlin RESTful API" {
+    component "Controller" as controller
+    component "Service" as service
+    component "Repository" as repository
+}
+database "PostgreSQL" as db
+
+user <--> controller
+controller <--> service
+service <--> repository
+repository <--> db
+
+@enduml
